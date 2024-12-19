@@ -196,10 +196,10 @@ For example:
 }
 ----
 
-The https://github.com/elastic/ecs-logging-nodejs/tree/main/packages/ecs-pino-format/examples[examples/ directory]
+The {ecs-logging-nodejs-blob}/packages/ecs-pino-format/examples[examples/ directory]
 shows sample programs using request and response logging:
-https://github.com/elastic/ecs-logging-nodejs/tree/main/packages/ecs-pino-format/examples/express-simple.js[with Express],
-https://github.com/elastic/ecs-logging-nodejs/tree/main/packages/ecs-pino-format/examples/express-with-pino-http.js[with the pino-http middleware package],
+{ecs-logging-nodejs-blob}/packages/ecs-pino-format/examples/express-simple.js[with Express],
+{ecs-logging-nodejs-blob}/packages/ecs-pino-format/examples/express-with-pino-http.js[with the pino-http middleware package],
 etc.
 
 
@@ -221,7 +221,7 @@ services or traces and logging data:
 - `event.dataset` enables {observability-guide}/inspect-log-anomalies.html[log
   rate anomaly detection] in the Elastic Observability app.
 
-For example, running https://github.com/elastic/ecs-logging-nodejs/blob/main/packages/ecs-pino-format/examples/http-with-elastic-apm.js[examples/http-with-elastic-apm.js] and `curl -i localhost:3000/` results in a log record with the following:
+For example, running {ecs-logging-nodejs-blob}/packages/ecs-pino-format/examples/http-with-elastic-apm.js[examples/http-with-elastic-apm.js] and `curl -i localhost:3000/` results in a log record with the following:
 
 [source,cmd]
 ----
@@ -251,7 +251,7 @@ const log = pino(ecsFormat({ apmIntegration: false }));
 [[pino-considerations]]
 === Limitations and Considerations
 
-The https://github.com/elastic/ecs-logging/tree/main/spec[ecs-logging spec]
+The {ecs-logging-repo}/blob/{branch}/spec[ecs-logging spec]
 suggests that the first three fields in log records must be `@timestamp`,
 `log.level`, and `message`. Pino does not provide a mechanism to put
 the `message` field near the front. Given that ordering of ecs-logging fields
